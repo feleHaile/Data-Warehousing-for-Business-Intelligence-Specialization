@@ -1,0 +1,48 @@
+[
+  {
+    "op": "core/column-split",
+    "description": "Разделить точно ' - ' [Camis - Location ID] (#### Строки)",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Camis - Location ID",
+    "guessCellType": false,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": " - ",
+    "regex": false,
+    "maxColumns": 2,
+    "separatorSolutionInt": 0
+  },
+  {
+    "op": "core/fill-down",
+    "description": "Заполнить вниз [Country] (#### Строки)",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Country"
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Изменить ячейку [State] (#### Строки)",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "State",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "new york"
+        ],
+        "to": "New York",
+        "type": "text"
+      }
+    ]
+  }
+]
